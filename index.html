@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./tang/tang-static/tang-css/tang-css.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="./drongr/drongr.css" />
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <div class="all-tab-div">
+      <ul class="all-tab">
+          <li id="tab-tang" class="tab-child" onclick="handleClick(0)">小唐</li>
+          <li id="tab-rong" class="tab-child" onclick="handleClick(1)">大蓉儿</li>
+          <li id="tab-hao" class="tab-child" onclick="handleClick(2)">郝学姐</li>
+        </ul>
+  </div>
+
+  <div id="tang-part">
+    <img class="person-illustration" src="./tang/tang-static/tang-img/person_illustration.png" alt="">
+    <div class="photo-with-dahu">
+      <p class="photo-title">与大虎共彪</p>
+      <img class="photo-one" src="./tang/tang-static/tang-img/photo_one.jpg" alt="">
+      <img class="photo-two" src="./tang/tang-static/tang-img/photo_two.jpg" alt="">
+    </div>
+
+    <div class="experience-in-dahu">
+      <p class="experience-title">在大虎的经历</p>
+      <div class="start-dahu">
+        <img class="icon-dahu" src="./tang/tang-static/tang-img/icon_start.png" alt="">
+        <p class="start-content">
+          我曾是一个懵懂的小孩，世界的变化与我无关，我对世事不争，但对未来怀有期待，时间就这样过着。<br><br>
+          我渴望变得有想法，我有一颗火热的心。直到有一天我遇见了大虎，它给了我前进的方向和无尽的勇气。
+        </p>
+      </div>
+      <div class="next-dahu">
+        <img class="icon-dahu" src="./tang/tang-static/tang-img/icon_next.png" alt="">
+        <p class="next-content">
+          时间过得很快，但我感觉我跑的飞快，快的超越了时间。<br><br>
+          我有热情，我能学到好多知识，我真幸运。
+        </p>
+      </div>
+      <div class="grow-up-dahu">
+        <img class="icon-dahu" src="./tang/tang-static/tang-img/icon_grow_up.png" alt="">
+        <p class="grow-up-content">
+          我长大了，我不再是那个小孩，而是一个真正的男人。<br><br>
+          我变了。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="exhibit" id="dearonger" hidden>
+    <div>
+        <img class="illustrate" src="./drongr/person_illustration@2x.png" alt="person_illustration"/>
+    </div>
+    <div class="Area photo">
+        <h2 class="title">&nbsp;&nbsp;与大虎共影</h2>
+        <img class="drongr-photo1" src="./drongr/photo_one.jpg" alt="photo1"/>
+        <img class="drongr-photo2" src="./drongr/photo_two.jpg" alt="photo2"/>
+    </div>
+    <div class="Area">
+        <h2 class="title drongr-experience">&nbsp;&nbsp;在大虎的经历</h2>
+        <div class="messageItem">
+            <img class="icon" src="./drongr/icon_start@2x.png" alt="icon1"/>
+            <p class="drongr-describe">在2018年4月14日，我成功加入了大虎科技。在此之前，我曾感觉有点落寞，但是我却不曾灰心过。</p>
+        </div>
+        <div class="messageItem">
+            <img class="icon" src="./drongr/icon_grow_up@2x.png" alt="icon2"/>
+            <p class="drongr-describe">在接下来的两个月内，我学到了很多新东西，感受到了自己也是很强的，也终于能hold住了。</p>
+        </div>
+        <div class="messageItem">
+            <img class="icon" src="./drongr/icon_next@2x.png" alt="icon3"/>
+            <p class="drongr-describe">以后的以后，我会按照我的想法继续前行。</p>
+        </div>
+    </div>
+
+    <div id="haoxuejie">
+
+    </div>
+</div>
+
+</body>
+<script>
+    let middle = [];
+    middle[0] = document.getElementById("tang-part");
+    middle[1] = document.getElementById("dearonger");
+    middle[2] = document.getElementById("haoxuejie");
+    let tabs = document.getElementsByClassName('tab-child');
+    function handleClick(child) {
+      for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.borderTop = '2px solid rgba(124, 146, 169, 0.5)';
+        middle[i].style.display = 'none'
+      }
+      tabs[child].style.borderTop = '2px solid rgba(32, 18, 0, 0.66)';
+      middle[child].style.display = 'block'
+    }
+</script>
+</html>

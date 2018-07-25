@@ -1,0 +1,30 @@
+* {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.all-tab-div {
+  display: flex;
+}
+
+.all-tab {
+  margin: 45px auto 62px;
+  display: inline-flex;
+  list-style: none;
+}
+
+.all-tab > li {
+  width: 196px;
+  cursor: pointer;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  text-align: center;
+  border-top: 2px solid rgba(124, 146, 169, 0.5);
+  font-weight: 600;
+}
+
+.all-tab #tab-tang {
+  border-top: 2px solid rgba(32, 18, 0, 0.66);
+}

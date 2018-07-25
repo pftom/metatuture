@@ -24,15 +24,15 @@
   text-align: left;
   margin-bottom: 25px;
 }
-.experience {
+.drongr-experience {
   margin-bottom: 64px;
 }
-.photo1 {
+.drongr-photo1 {
   width: 554px;
   height: 237px;
   border-radius: 20px;
 }
-.photo2 {
+.drongr-photo2 {
   width: 262px;
   height: 237px;
   border-radius: 20px;
@@ -47,7 +47,7 @@
   margin-right: 33px;
   vertical-align: middle;
 }
-.describe {
+.drongr-describe {
   display: inline;
   font-size: 14px;
 }
