@@ -1,0 +1,64 @@
+#tang-part {
+  width: 847px;
+  margin: auto;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#tang-part .person-illustration {
+  width: 530px;
+  height: 374px;
+  display: block;
+  margin: auto;
+}
+
+#tang-part .photo-with-dahu {
+  overflow: hidden;
+  margin-top: 94px;
+}
+
+#tang-part .photo-with-dahu .photo-title,
+#tang-part .experience-in-dahu .experience-title {
+  border-left: 5px solid #201200;
+  padding: 7px 12px;
+  color: #9b9b9b;
+  margin-bottom: 36px;
+}
+
+#tang-part .photo-one {
+  width: 554px;
+  height: 237px;
+  float: left;
+  border-radius: 15px;
+}
+
+#tang-part .photo-two {
+  width: 262px;
+  height: 237px;
+  float: right;
+  border-radius: 15px;
+}
+
+#tang-part .icon-dahu {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+#tang-part .experience-in-dahu {
+  margin-top: 107px;
+}
+
+#tang-part .experience-in-dahu > div {
+  margin: 50px 24px 0;
+  overflow: hidden;
+}
+
+#tang-part .experience-in-dahu > div > p {
+  margin-left: 33px;
+  color: #9b9b9b;
+  width: 698px;
+  float: left;
+  margin-top: 0;
+  font-size: 18px;
+}
