@@ -4,6 +4,64 @@
   margin: 0;
   padding: 0;
 }
+.header {
+  width: 1024px;
+  height: 361px;
+  background-color: #4641ff;
+  margin: auto;
+  background-image: url(./drongr/bgHeader@2x.png);
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
+.header h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: 27px;
+  margin-left: 328px;
+}
+
+.pageDescribe {
+  width: 625px;
+  color: white;
+  margin-top: 55px;
+  margin-left: 200px;
+  font-weight: lighter;
+}
+
+.logo {
+  width: 50px;
+  height: 58px;
+  margin-left: 89px;
+  margin-top: 34px;
+}
+
+.GitButton {
+  width: 109px;
+  height: 41px;
+  float: right;
+  border: 1px solid white;
+  color: white;
+  background-color: #4641ff;
+  border-radius: 20.5px;
+  margin-right: 87px;
+  margin-top: 39px;
+}
+
+.footer {
+  width: 1024px;
+  height: 163px;
+  text-align: center;
+  margin: auto;
+  background-color: #201200;
+  margin-top: 112px;
+  line-height: 163px;
+}
+.footer h1 {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+}
 
 .all-tab-div {
   display: flex;
