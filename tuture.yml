@@ -1,0 +1,215 @@
+name: Tuture 入门教程
+version: 0.0.1
+language: zh-CN
+topics:
+  - tuture
+  - html
+  - js
+  - css
+email: 1043269994@qq.com
+steps:
+  - name: 完成老唐中间部分内容
+    commit: '818e662'
+    explain:
+      pre:
+        - '# 前提准备'
+        - '## 教程简介'
+        - >-
+          接下来，我们会一起开发一个团队成员介绍页的项目。并且教你如何使用
+          [tuture](https://github.com/tutureproject/tuture) 一步一步的将这个项目变成一个实战教程。
+        - >-
+          在开始教程之前，如果你想预览一下这个团队成员介绍页会是什么样子的话可以点击
+          [效果预览](https://user-gold-cdn.xitu.io/2018/7/25/164d123e52194c8e?w=686&h=1568&f=png&s=570362)
+          查看。本项目的源码放在了 [Github]((https://github.com/tutureproject/examples))
+          上，你可以随时访问。
+        - '## 环境准备'
+        - >-
+          在开始阅读教程之前，我建议你先阅读一下 [tuture
+          文档的安装部分](https://github.com/tutureproject/tuture)，这里面有非常好的指导步骤，帮助你了解在使用
+          Tuture 之前，应该需要做哪些准备。
+        - '## 寻求帮助'
+        - >-
+          如果你遇到任何困难，可以在 [Gitter tuture](https://gitter.im/tuture-dev/Lobby)
+          频道寻求帮助。加入我们的 [Slack](https://slack.com/create#email)
+          也是一个不错的选择。如果通过上述方式还是解决不了你的问题，你也可以在
+          [Github](https://github.com/tutureproject/tuture) 上给我们提一个
+          issue。我们非常乐意解决您的问题！
+        - '# 总览'
+        - 现在，你已经准备好了前提条件。让我们开始了解一下 tuture 的总览。
+        - '## Tuture 是什么？'
+        - Tuture 是一个基于 Git 仓库、轻松且快速编写高质量技术教程的工具。
+        - Tuture 会基于你的 Git 仓库生成一个 tuture.yml 文件。目前，你所有撰写教程的活动都将在这个文件中进行。
+        - |-
+          ```yml
+          steps:
+            - name: 完成老唐部分
+              commit: '818e662'
+              explain: 完成了 HTML 和 CSS
+              diff:
+                - file: index.css
+                - file: index.html
+          ```
+        - '> 以上是 tuture.yml 文件中的 steps 部分的某一步（step）。'
+        - '> 其实，Tuture 还会生成一个 .tuture 文件夹，里面存储着 Tuture 要使用的一些元数据，但是你可能永远也不需要了解它。'
+        - >-
+          我们现在大部分人都会使用 Git 来做版本控制。你在编写一个实战项目的过程中，每写完一个部分，都需要提交一次 `commit`，而每次
+          `commit` 你都需要填写提交信息。
+        - >-
+          那么，让我们来设想一下，站在编写一个教程的角度思考问题。每次 `commit` 的提交信息作为编写一个教程的步骤，也就是 Tuture
+          生成的 tuture.yml 文件中 `steps` 的每一步（step）的 `name`，每次 `commit`
+          的提交内容（代码等）作为教程这一步骤需要使用到的代码块。
+        - >-
+          然后我们再基于这个 `commit` 写一些解释
+          （`explain`）。如此往复，那么在做一个实战项目的同时，你还能方便的复用你实战项目的成果来写出一个教程。
+        - >-
+          > 上文提到的诸如 **steps**、**name**、**explain** 是 Tuture
+          的一些关键字。如果暂时还不了解也没有关系，因为在接下来的教程中，我们会逐步讲解这些字段的含义。
+      post:
+        - '## 提交代码'
+        - 经过一段时间的编码，我们已经初步完成了我们的预期的目标：完成老唐中间部分内容。
+        - 接下来让我们试着将这段代码提交到 Git 仓库，让 Git 版本库记录我们的代码。我们在终端输入如下的内容：
+        - |-
+          ```shell
+          git add .
+          git commit -m '完成老唐中间部分内容'
+          ```
+        - 随着我们的第一步代码提交到 Git 仓库，并且编写了像 **完成老唐中间部分内容** 这样的提交信息。一切的准备工作就已经就绪了。
+        - '# 开始编写我们的实战教程'
+        - '## 初始化 Tuture 项目'
+        - 说了很久的 Tuture，现在就让我们来看一看它的庐山真面目。我们打开终端，切换执行目录到我们的实战项目目录之下，然后键入如下命令：
+        - |-
+          ```shell
+          tuture init
+          ```
+        - 接着 Tuture 会询问你一系列教程所需要的信息，例如：教程的名字，教程涉及的技术栈，教程的编写者等。
+        - 这里我们可以认真的填入相关信息，也可以选择一路按回车，让 Tuture 为我们设置默认信息。
+        - 当然，如果你连想都不想看到这个询问页面，那么你可以在给上面的命令带上一个参数：`-y`。
+        - |-
+          ```shell
+          tuture init -y
+          ```
+        - 一旦加上这个参数，Tuture 会自动帮你填入默认信息。
+        - >-
+          当你成功运行完这个命令之后，你会发现，你的实战教程仓库里多了一些东西：一个 **tuture.yml** 文件 和 一个
+          .**tuture** 文件夹。恭喜你！这个实战仓库现在多了第二重身份：教程仓库。
+        - '## 运行初始化的教程'
+        - '当我们在编辑器里面打开 **tuture.yml**。会看到如下的内容:'
+        - "```yml\nname: Team personal intro\blanguage: zh-CN\nversion: 0.0.1\ntopics:\n   - HTML\n  - CSS\ndescription: This project is about display team personal page\nmaintainer: 1043269994@qq.com\nsteps:\n  - name: 完成老唐中间部分内容\n    commit: '818e662'\n    diff:\n      - file: tang/tang.html\n      - file: tang/tang-static/tang-css/tang-css.css\n"
+        - >-
+          我们可以看到，除了在运行 `tuture init` 时自己填写的信息，或是 Tuture 默认初始化的信息外，这里还额外多了一个
+          `steps` 部分。实际上在 yml 文件中，这是一个数组字段。这个 steps 实际上对应着我们多次 commit 组成的 commit
+          数组。
+        - >-
+          目前我们有一个 step， 这个 step 代表着我们刚才使用 Git 提交的一个 commit。Tuture 提取出了这个
+          commit，并且将其保存在 tuture.yml 文件中。
+        - 让我们在终端下运行如下命令来将我们的教程页面渲染出来：
+        - |-
+          ```shell
+          tuture up
+          ```
+        - 你应该能在浏览器中看到如下的内容：
+        - '![完成老唐中间部分](./images/tang.png)'
+        - >-
+          这是个最基础的教程渲染页，还没有任何的解释，只有在第一步提交中收集的代码块，它看起来显得单调和让人不知所措，一个实用的教程不应该这样。但是，别急，我们会不断的完善它。
+        - '## 编写教程'
+        - >-
+          接下来，让我们尝试着给这个教程加点解释。我们在 tuture.yml 文件中加入一点内容。我们将在这个 commit 上加一个
+          explain
+          解释，这个解释将告诉教程阅读者，我们在这一步骤里面要讲解的一些总体内容，以及完成这一步骤需要的一些前提条件，让阅读教程的读者能够顺利了解这一步骤自己能学到那些东西。
+        - >-
+          接着，我们对这个 commit 提交的两个文件（tang/tang.html 以及
+          tang/tang-static/tang-css/tang-css.css）分别加上一个 explain
+          解释。向教程阅读者解释我们为什么要加入这两个文件，以及如何编写出这两个文件。让阅读教程的读者能够了解接下来该如何做。
+        - "```yml\nname: Team personal intro\blanguage: zh-CN\nversion: 0.0.1\ntopics:\n   - HTML\n  - CSS\ndescription: This project is about display team personal page\nmaintainer: 1043269994@qq.com\nsteps:\n  - name: 完成老唐中间部分内容\n    commit: '818e662'\n    explain: 完成了 HTML 页面的编写，并且加入了一些图片。然后给页面加上了一些样式\n    diff:\n      - file: tang/tang.html \n        explain: HTML 页面主要包含了一个顶部插图，用来描述此人现在的生活和工作状态，我们用 img 标签来呈现它。然后就是两张图片和三段个人介绍...\n      - file: tang/tang-static/tang-css/tang-css.css\n        explain: 我们这里要对图片使用居中布局，对于 inline 元素，我们对父元素使用 `text-align: center` 就足够了。当然对于三段个人介绍，我们需要清除一下 ul 和 li 标签的默认样式..."
+        - 然后我们再尝试运行我们的教程：
+        - |-
+          ```shell
+          tuture up
+          ```
+        - 然后 Tuture 会自动打开浏览器，渲染我们的教程内容。如下图：
+        - '![tang-after-explain-html](./images/tang-after-explain-html.png)'
+        - '![tang-after-explain-css](./images/tang-after-explain-css.png)'
+        - 怎么样！当我们加入了一些解释之后，是不是更像一个教程了？
+        - '# 总结'
+        - 在这一小节中，我们来复习一下我们完成了哪些内容的学习：
+        - |-
+          - 介绍了 Tuture 是什么
+          - 创建了我们的实战项目，然后加入了一些代码。并将其用 Git 变成了一个 git 仓库
+          - 使用 Tuture 将我们的 Git 仓库变成了一个教程仓库，并且运行这个仓库，观看在浏览器中的渲染效果。
+          - 接着，我们在 tuture.yml 文件中给我们的第一步 commit 添加了一些解释，让我们的教程更简单易懂。
+        - >-
+          在下一节中，我们会不断的给我们的实战项目添加内容，并且随着实战项目内容的增加，我们的教程内容也会增加。当教程内容越来越复杂，我们就需要一些
+          Tuture 提供的高级特性来编写我们的教程，接下来我们将会学习 Tuture 的高级特性。
+    diff:
+      - file: tang/tang.html
+        explain:
+          pre:
+            - '# 开始编写我们的实战项目'
+            - '## 创建项目'
+            - '> 目标：完成设计稿 老唐 中间部分的内容。'
+            - >-
+              我们首先要创建一个项目文件夹，比如叫做 team-personal-page。本项目默认你是在 Linux 或者 是 MacOS
+              环境下进行。好的，现在打开你的终端，在其之下输入如下命令：
+            - |-
+              ```shell
+              mkdir team-personal-page
+              cd team-personal-page
+              ```
+            - 接下来我们要将这个项目变成一个 Git 仓库，这样 Tuture 才能使用它。
+            - |-
+              ```shell
+              git init
+              ```
+            - '## 编写代码'
+            - >-
+              现在让我们开始编写这个页面的 HTML 部分。因为我们看到，这个页面中间有一个 Tab
+              切换，对应着三块内容，但是我们在这个实战里面我们只会完成前两块内容：即老唐和大蓉儿的内容。
+            - '好的，来让我们从中间内容开始编写吧。首先，我们来编写老唐的 HTML 部分。代码如下:'
+          post:
+            - >-
+              我们这里在 HTML 中用到了一些图片，这些图片可以在
+              [Github](https://github.com/dhucst/cooperation) 仓库上进行获取。
+            - >-
+              > 因为这是一个介绍 Tuture 的实战教程，所以关于页面的 HTML 和 CSS
+              内容，我们这里不会深入了解其中的细节，只会单纯的贴出要实现的代码。
+      - file: tang/tang-static/tang-css/tang-css.css
+        explain:
+          pre:
+            - 接着，我们为这个 HTML 加上一些 CSS，让它看起来更美观，也更符合我们设计稿上期待的效果。代码如下：
+          post:
+            - >-
+              最后，我们顺利完成了预期的目标，如果你想观看自己将会达到一个怎样的效果，可以点击我们的
+              [预览图](https://user-gold-cdn.xitu.io/2018/7/26/164d4bbad7afca74?w=2084&h=1922&f=jpeg&s=255562)。
+            - >-
+              现在已经有模有样了，对吧？但是它看起来还稍显单调，一个人孤零零的伫立在页面中央。别急，在下一节中，我们会继续丰富我们的 HTML 和
+              CSS，让这个页面看起来更有一种团队介绍页面的感觉。
+  - name: 完成大蓉儿中间部分内容
+    commit: '40613e4'
+    diff:
+      - file: drongr/drongr.css
+      - file: drongr/drongr.html
+      - file: drongr/icon_grow_up@2x.png
+      - file: drongr/icon_next@2x.png
+      - file: drongr/icon_start@2x.png
+      - file: drongr/person_illustration@2x.png
+      - file: drongr/photo_one.jpg
+      - file: drongr/photo_two.jpg
+  - name: 构建 Tab 切换
+    commit: dbd3d07
+    diff:
+      - file: drongr/drongr.css
+      - file: index.css
+      - file: index.html
+  - name: 加入头部和尾部内容
+    commit: 43ae5ca
+    diff:
+      - file: drongr/bgHeader@2x.png
+      - file: drongr/logo@2x.png
+      - file: index.css
+      - file: index.html
+  - name: 'feat: add metatuture first step tutorials'
+    commit: e464702
+    diff:
+      - file: images/tang-after-explain-css.png
+      - file: images/tang-after-explain-html.png
+      - file: images/tang.png
