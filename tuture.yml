@@ -207,9 +207,3 @@ steps:
       - file: drongr/logo@2x.png
       - file: index.css
       - file: index.html
-  - name: 'feat: add metatuture first step tutorials'
-    commit: e464702
-    diff:
-      - file: images/tang-after-explain-css.png
-      - file: images/tang-after-explain-html.png
-      - file: images/tang.png
